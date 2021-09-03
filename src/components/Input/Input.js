@@ -4,6 +4,7 @@ const Input = ({ room, message, setMessage, sendMessage }) => (
   <section className="inputBar">
     <form className="inputBar__form">
       <input
+        tabIndex="5"
         className="input inputBar__input"
         type="text"
         placeholder={`Message ${room}`}
