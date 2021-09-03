@@ -1,6 +1,6 @@
 {
   "name": "socketchat-client",
-  "homepage": "https://xyeres.github.io/socketchat-client/",
+  "homepage": "/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
