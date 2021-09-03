@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const UserMenu = ({ room, name, users, userProfilePic, menuIsActive, handleMenuToggle }) => {
+const UserMenu = ({ getProfilePic, room, name, users, userProfilePic, menuIsActive, handleMenuToggle }) => {
   return (
     <section className={menuIsActive ? "userMenu userMenu--active" : "userMenu"}>
       <div className="logo">
@@ -17,11 +17,11 @@ const UserMenu = ({ room, name, users, userProfilePic, menuIsActive, handleMenuT
           ? (<div className="activeUsers">
             <p className="activeUsers__heading">Online — {users.length}</p>
             <ul className="users">
-              {users.map(({ name, id }) => (
+              {users.map(({ name, id, picIndex }) => (
                 <li className="user" key={id}>
                   <div className="user__userImage">
                     <i className="user__onlineIcon" aria-hidden="true"></i>
-                    <img src={userProfilePic} alt={`user# ${id}`} />
+                    <img src={getProfilePic(picIndex)} alt={`user# ${id}`} />
                   </div>
                   <div className="user__detail">
                     <div className="user__header">

@@ -84,7 +84,7 @@ const Chat = ({ location }) => {
         users={users}
         menuIsActive={menuIsActive}
         handleMenuToggle={handleMenuToggle}
-        userProfilePic={userProfilePic}
+        getProfilePic={getRandomProfilePic}
       />
       <div className={menuIsActive ? "dim--active" : "dim"}>
         <main className="screen">
