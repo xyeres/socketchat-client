@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+let randomNumberInRange = Math.floor(Math.random() * 85954 / 2 / 2 * 2)
+
 const Join = () => {
-  const [name, setName] = useState('Anonymous');
+  const [name, setName] = useState(`Anonymous${randomNumberInRange}`);
   const [room, setRoom] = useState('tea-tasting');
 
   return (
