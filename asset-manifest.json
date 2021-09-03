@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/socketchat-client/static/css/main.1f74bfa2.chunk.css",
-    "main.js": "/socketchat-client/static/js/main.64d182ed.chunk.js",
-    "main.js.map": "/socketchat-client/static/js/main.64d182ed.chunk.js.map",
+    "main.js": "/socketchat-client/static/js/main.6ce47fde.chunk.js",
+    "main.js.map": "/socketchat-client/static/js/main.6ce47fde.chunk.js.map",
     "runtime-main.js": "/socketchat-client/static/js/runtime-main.d65c0d8e.js",
     "runtime-main.js.map": "/socketchat-client/static/js/runtime-main.d65c0d8e.js.map",
     "static/js/2.8aadd013.chunk.js": "/socketchat-client/static/js/2.8aadd013.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.d65c0d8e.js",
     "static/js/2.8aadd013.chunk.js",
     "static/css/main.1f74bfa2.chunk.css",
-    "static/js/main.64d182ed.chunk.js"
+    "static/js/main.6ce47fde.chunk.js"
   ]
 }
