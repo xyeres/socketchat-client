@@ -21,7 +21,7 @@ const UserMenu = ({ room, name, users, userProfilePic, menuIsActive, handleMenuT
                 <li className="user" key={id}>
                   <div className="user__userImage">
                     <i className="user__onlineIcon" aria-hidden="true"></i>
-                    <img src={userProfilePic} alt={`user # ${id}`} />
+                    <img src={userProfilePic} alt={`user# ${id}`} />
                   </div>
                   <div className="user__detail">
                     <div className="user__header">
