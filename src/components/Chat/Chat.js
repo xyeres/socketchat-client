@@ -7,6 +7,9 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import UserMenu from '../UserMenu/UserMenu';
 
+const DEBUG = 0
+
+
 let socket;
 
 const Chat = ({ location }) => {
@@ -18,7 +21,12 @@ const Chat = ({ location }) => {
   const [menuIsActive, setMenuActive] = useState(false);
   const [userProfilePic, setUserProfilePic] = useState('');
 
-  const ENDPOINT = 'https://socketchat-serve.herokuapp.com/';
+  // Setup Socket.io Endpoint
+  let ENDPOINT = '';
+
+  DEBUG ?
+    ENDPOINT = 'http://localhost:5001'
+    : ENDPOINT = 'https://socketchat-serve.herokuapp.com/';
 
   useEffect(() => {
     const { pic, picIndex } = getRandomProfilePic()
@@ -32,14 +40,12 @@ const Chat = ({ location }) => {
     setRoom(room);
 
     socket.emit('join', { name, room, picIndex }, (callbackMessage) => {
-      // Do stuff when user joins... this is the callback 
-      // that fires when the server recieves the emit message
+      // Do stuff when user joins...
       if (callbackMessage) {
         alert(callbackMessage);
         window.location = '/';
       }
     })
-
     // Cleanup when the component dismounts:
     return () => {
       socket.emit('disconnect');
