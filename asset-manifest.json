@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/socketchat-client/static/css/main.1f74bfa2.chunk.css",
+    "main.js": "/socketchat-client/static/js/main.64d182ed.chunk.js",
+    "main.js.map": "/socketchat-client/static/js/main.64d182ed.chunk.js.map",
+    "runtime-main.js": "/socketchat-client/static/js/runtime-main.d65c0d8e.js",
+    "runtime-main.js.map": "/socketchat-client/static/js/runtime-main.d65c0d8e.js.map",
+    "static/js/2.8aadd013.chunk.js": "/socketchat-client/static/js/2.8aadd013.chunk.js",
+    "static/js/2.8aadd013.chunk.js.map": "/socketchat-client/static/js/2.8aadd013.chunk.js.map",
+    "index.html": "/socketchat-client/index.html",
+    "static/css/main.1f74bfa2.chunk.css.map": "/socketchat-client/static/css/main.1f74bfa2.chunk.css.map",
+    "static/js/2.8aadd013.chunk.js.LICENSE.txt": "/socketchat-client/static/js/2.8aadd013.chunk.js.LICENSE.txt",
+    "static/media/building.452805ba.png": "/socketchat-client/static/media/building.452805ba.png",
+    "static/media/style.css": "/socketchat-client/static/media/city.566214ab.png",
+    "static/media/face.ffdc205d.png": "/socketchat-client/static/media/face.ffdc205d.png",
+    "static/media/ghost.81274bd4.png": "/socketchat-client/static/media/ghost.81274bd4.png",
+    "static/media/map.0a4e31df.png": "/socketchat-client/static/media/map.0a4e31df.png",
+    "static/media/owl.8062a06f.png": "/socketchat-client/static/media/owl.8062a06f.png",
+    "static/media/peacock.d8c413c5.png": "/socketchat-client/static/media/peacock.d8c413c5.png",
+    "static/media/plant.dbba7e1b.png": "/socketchat-client/static/media/plant.dbba7e1b.png",
+    "static/media/squid.6df2d9c7.png": "/socketchat-client/static/media/squid.6df2d9c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d65c0d8e.js",
+    "static/js/2.8aadd013.chunk.js",
+    "static/css/main.1f74bfa2.chunk.css",
+    "static/js/main.64d182ed.chunk.js"
+  ]
+}
