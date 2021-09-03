@@ -1,0 +1,502 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/***************
+ * Following resets borrowed from https://piccalil.li/blog/a-modern-css-reset/
+***************/
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background-color: #fffdff;
+}
+
+body {
+  position: relative;
+}
+
+#root {
+  position: relative;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: #eeeef0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #5a5d62;
+  border-radius: 40px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #5a5d62;
+}
+
+.screen {
+  min-height: 100vh;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.infoBar {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fffdff;
+  border-bottom: solid 1px #eeeef0;
+  border-bottom: solid 4px #8e55f0;
+  z-index: 1;
+}
+
+.infoBar__userMenuToggle {
+  font-size: 1.15em;
+  color: #5a5d62;
+  cursor: pointer;
+}
+
+.infoBar__userMenuToggle:hover,
+.infoBar__userMenuToggle:active {
+  color: #8e55f0;
+}
+
+.infoBar__title {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 1.125rem;
+}
+
+.message__onlineIcon {
+  padding-left: 4px;
+  padding-bottom: 1px;
+  display: inline;
+}
+
+.message__userImage {
+  max-height: 50px;
+  margin-right: 0.6rem;
+}
+
+.message__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #a0a3a8;
+}
+
+.message__userName {
+  font-size: 0.95em;
+  padding-right: 0.4rem;
+  font-weight: 500;
+}
+
+.message__userImage {
+  max-width: 2.5rem;
+}
+
+.message__timestamp {
+  font-size: 0.69em;
+}
+
+.messages {
+  padding: 0.95rem 1.5rem 0 1rem;
+  background-color: #fffdff;
+}
+
+.userMenu {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  overflow: auto;
+  max-width: 265px;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 14px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: all 105ms linear;
+  box-shadow: 0px 6px 3px 2px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+.userMenu--active {
+  right: 0px;
+}
+
+.dim {
+  z-index: 0;
+  opacity: 1;
+  transition: all 85ms linear;
+}
+
+.dim--active {
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.activeUsers {
+  margin-top: 1rem;
+}
+
+.activeUsers__heading {
+  text-transform: uppercase;
+  font-size: 0.78em;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+}
+
+.users {
+  margin-left: 0px;
+  padding: 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.125rem;
+}
+
+.user__onlineIcon {
+  position: absolute;
+  right: -1px;
+  top: 25px;
+  color: #69f0ae;
+  border: 2px solid white;
+  height: 12px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 12px;
+  background-color: #69f0ae;
+}
+
+.user__userImage {
+  position: relative;
+  max-height: 50px;
+  margin-right: 0.6rem;
+}
+
+.user__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user__userName {
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.user__userImage {
+  max-width: 2.5rem;
+}
+
+.logo {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.45em;
+  color: #5e1eca;
+}
+
+.logo__title {
+  margin-right: auto;
+  font-weight: 900;
+}
+
+.logo__icon {
+  color: white;
+  padding: 4px 10px;
+  margin-right: 6px;
+  border-radius: 900px;
+  background-color: #5e1eca;
+  transition: 410ms transform ease-in-out;
+}
+
+.logo__icon:hover,
+.logo__icon:focus,
+.logo__icon:active {
+  outline: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  transform: rotate(720deg);
+}
+
+.logo__btn {
+  color: #5a5d62;
+}
+
+.logo__btn:hover,
+.logo__btn:focus,
+.logo__btn:active {
+  color: #8e55f0;
+}
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.7em;
+  background: #5e1eca;
+  color: white;
+  padding: 7px 15px;
+  display: block;
+  text-align: center;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background: #8e55f0;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: dashed 3px #eeeef0;
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  border: solid 1px #a0a3a8;
+  border-radius: 100px;
+  padding-left: 0.925rem;
+}
+
+.input:focus {
+  outline: none;
+  outline-width: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: dashed 3px #8e55f0;
+}
+
+.inputBar {
+  position: sticky;
+  bottom: 0px;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  background-color: white;
+  border-top: solid 1px #eeeef0;
+}
+
+.inputBar__form {
+  display: flex;
+  min-height: 2.5rem;
+}
+
+.inputBar__input {
+  width: 80%;
+}
+
+.inputBar__btn {
+  font-size: 1.05em;
+  max-width: 86px;
+  width: 20%;
+  padding: 5px;
+  margin-left: 0.5rem;
+}
+
+.fa-paper-plane-o {
+  transition: all 360ms ease-out;
+}
+
+.fa-paper-plane-o:hover,
+.fa-paper-plane-o:active {
+  transform: rotate(360deg);
+}
+
+.bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/city.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #c5e0dc;
+}
+
+.loginContainer {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  padding-top: 20%;
+}
+
+@media (orientation: landscape) {
+  .loginContainer {
+    padding-top: 0;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1240px) {
+  .loginContainer {
+    padding: 10rem;
+    padding-top: 15rem;
+  }
+}
+
+.login {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.login__input {
+  margin: 0.3rem 0;
+}
+
+.login__logo {
+  min-width: 180px;
+}
+
+.login__btn {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+
+.logout__btn {
+  color: #5a5d62;
+  background-color: white;
+  border: dashed 3px #eeeef0;
+  transition: 90ms background-color ease-in-out;
+}
+
+.logout__btn:hover,
+.logout__btn:active,
+.logout__btn:focus {
+  color: white;
+}
+
+@media (min-width: 800px) {
+
+  #menuClose,
+  #menuOpen {
+    display: none;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+  }
+
+  .containerContainer {
+    max-width: 100%;
+    max-width: 100%;
+  }
+
+  .messages {
+    overflow: auto;
+  }
+
+  .dim {
+    border-left: solid 1px lightgrey;
+    flex-grow: 1;
+  }
+
+  .inputBar {
+    margin-top: 3rem;
+    bottom: 0px;
+    min-width: 66%;
+  }
+
+  .userMenu {
+    position: sticky;
+    overflow: auto;
+    transition: none;
+    height: 100vh;
+    align-self: stretch;
+    flex-grow: 1;
+    padding: 1.5rem;
+    border-radius: 0;
+    border-left: solid 1px lightgrey;
+    box-shadow: none;
+    z-index: 1;
+    max-width: 300px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
