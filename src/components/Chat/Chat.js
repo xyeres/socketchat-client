@@ -18,7 +18,7 @@ const Chat = ({ location }) => {
   const [menuIsActive, setMenuActive] = useState(false);
   const [userProfilePic, setUserProfilePic] = useState('');
 
-  const ENDPOINT = 'http://localhost:5001';
+  const ENDPOINT = 'https://socketchat-serve.herokuapp.com/';
 
   useEffect(() => {
     const { pic, picIndex } = getRandomProfilePic()
