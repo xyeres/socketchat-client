@@ -30,13 +30,9 @@ Users should be able to:
 
 ### Screenshot
 #### Mobile
-![](./screenshot2.jpg)
-![](./screenshot3.jpg)
-![](./screenshot4.jpg)
+![](./screen-feature.png)
 #### Desktop
-![](./screenshot1.jpg)
-![](./screenshot.jpg)
-
+![](./screen-feature-desktop.png)
 ### Links
 
 - Solution Code: This repo, check out the code!
