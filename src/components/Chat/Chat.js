@@ -27,25 +27,24 @@ const Chat = ({ location }) => {
     : ENDPOINT = 'https://socketchat-serve.herokuapp.com/';
 
   useEffect(() => {
+    // Get random profile pic and set it
     const { pic, picIndex } = getRandomProfilePic()
     setUserProfilePic(pic)
 
+    // Set room and username
     const { room, name } = queryString.parse(location.search);
-
-    socket = io(ENDPOINT);
-
-
     setName(name);
     setRoom(room);
 
+    socket = io(ENDPOINT);
     socket.emit('join', { name, room, picIndex }, (callbackMessage) => {
-      // Do stuff when user joins...
+      // Alert user if username is taken
       if (callbackMessage) {
         alert(callbackMessage);
         window.location = '/';
       }
     })
-    // Cleanup when the component dismounts:
+    // Cleanup
     return () => {
       socket.emit('disconnect');
       socket.off()
