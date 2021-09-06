@@ -1,5 +1,5 @@
 # Socketchat Client, mobile-first websockets chat app 
-Socketchat Client is a frontend chat app implemented with React and Socket.io-client. I built the [backend server](https://github.com/xyeres/socketchat-server) on Express and Socket.io which implements a modern API for Websockets. [Live site can be found here](https://inspiring-goodall-255229.netlify.app/)
+Socketchat Client is a frontend chat app implemented with React and Socket.io-client. I designed and styled the UI, built it out in React and then built the [backend server](https://github.com/xyeres/socketchat-server) on Express and Socket.io which implements WebSockets. [Live site can be found here](https://inspiring-goodall-255229.netlify.app/)
 
 ## Table of contents
 
