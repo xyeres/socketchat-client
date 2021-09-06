@@ -1,0 +1,6 @@
+@use '../base/colors';
+
+.messages {
+  padding: 0.95rem 1.5rem 0 1rem;
+  background-color: colors.$messagesBackground;
+}

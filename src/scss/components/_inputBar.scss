@@ -1,0 +1,38 @@
+@use './btn';
+@use '../base/colors';
+
+
+.inputBar {
+  position: sticky;
+  bottom: 0px;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  background-color: colors.$inputBarBackground;
+  border-top: solid 1px colors.$borderLightGray;
+
+  &__form {
+    display: flex;
+    min-height: 2.5rem;
+  }
+
+  &__input {
+    width: 80%;
+  }
+
+  &__btn {
+    font-size: 1.05em;
+    max-width: 86px;
+    width: 20%;
+    padding: 5px;
+    margin-left: 0.5rem;
+  }
+}
+
+.fa-paper-plane-o {
+  transition: all 360ms ease-out;
+}
+
+.fa-paper-plane-o:hover,
+.fa-paper-plane-o:active {
+  transform: rotate(360deg)
+}

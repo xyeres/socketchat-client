@@ -1,0 +1,49 @@
+@use '../abstracts/mixins';
+
+@include mixins.for-tablet-portrait-up {
+
+  #menuClose,
+  #menuOpen {
+    display: none;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+  }
+
+  .containerContainer {
+    max-width: 100%;
+  }
+
+  .messages {
+    overflow: auto;
+  }
+
+  .dim {
+    border-left: solid 1px lightgrey;
+    flex-grow: 1;
+  }
+
+  .inputBar {
+    margin-top: 3rem;
+    bottom: 0px;
+    min-width: 66%;
+  }
+
+  .userMenu {
+    position: sticky;
+    overflow: auto;
+    transition: none;
+    height: 100vh;
+    align-self: stretch;
+    flex-grow: 1;
+    padding: 1.5rem;
+    border-radius: 0;
+    border-left: solid 1px lightgrey;
+    box-shadow: none;
+    z-index: 1;
+    max-width: 300px;
+  }
+}

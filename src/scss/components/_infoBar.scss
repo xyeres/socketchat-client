@@ -1,0 +1,29 @@
+@use '../base/colors';
+
+.infoBar {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: colors.$messagesBackground;
+  border-bottom: solid 1px colors.$borderLightGray;
+  border-bottom: solid 4px colors.$lightPurple;
+  z-index: 1;
+
+  &__userMenuToggle {
+    font-size: 1.15em;
+    color: colors.$bodyFont;
+    cursor: pointer;
+  }
+
+  &__userMenuToggle:hover,
+  &__userMenuToggle:active {
+    color: colors.$lightPurple;
+  }
+
+  &__title {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+}

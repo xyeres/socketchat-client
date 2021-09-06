@@ -1,0 +1,19 @@
+@use '../base/colors';
+
+
+.input {
+  flex: 1;
+  width: 100%;
+  border: solid 1px colors.$asideFont;
+  border-radius: 100px;
+  padding-left: 0.925rem;
+
+  &:focus {
+    outline: none;
+    outline-width: 0;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border: dashed 3px colors.$lightPurple;
+  }
+}

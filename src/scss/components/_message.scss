@@ -1,0 +1,41 @@
+@use '../base';
+@use '../base/colors';
+
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 1.125rem;
+
+  &__onlineIcon {
+    padding-left: 4px;
+    padding-bottom: 1px;
+    display: inline;
+  }
+
+  &__userImage {
+    max-height: 50px;
+    margin-right: .6rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: colors.$asideFont;
+  }
+
+  &__userName {
+    font-size: 0.95em;
+    padding-right: .4rem;
+    font-weight: 500;
+  }
+
+  &__userImage {
+    max-width: 2.5rem;
+  }
+
+  &__timestamp {
+    font-size: .69em;
+  }
+}

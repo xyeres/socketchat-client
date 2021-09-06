@@ -1,0 +1,70 @@
+@use '../base/colors';
+@use '../abstracts/mixins';
+
+.bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../img/city.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #c5e0dc;
+}
+
+.loginContainer {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  padding-top: 20%;
+}
+
+@include mixins.landscape-screens {
+  .loginContainer {
+    padding-top: 0;
+    padding: 2rem;
+  }
+}
+
+@include mixins.for-large-desktop-up {
+  .loginContainer {
+    padding: 10rem;
+    padding-top: 15rem;
+
+  }
+}
+
+.login {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+
+  &__input {
+    margin: 0.3rem 0;
+  }
+
+  &__logo {
+    min-width: 180px;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 0.3rem;
+    text-decoration: none;
+  }
+}
+
+.logout__btn {
+  color: colors.$bodyFont;
+  background-color: colors.$white;
+  border: dashed 3px colors.$borderLightGray;
+  transition: 90ms background-color ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: colors.$white;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../base/colors';
+
+.logo {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.45em;
+  color: colors.$purple;
+
+  &__title {
+    margin-right: auto;
+    margin-right: 9px;
+    font-weight: 900;
+  }
+
+  &__icon {
+    color: colors.$white;
+    padding: 4px 10px;
+    margin-right: 6px;
+    border-radius: 900px;
+    background-color: colors.$purple;
+    transition: 410ms transform ease-in-out;
+  }
+
+  &__icon:hover,
+  &__icon:focus,
+  &__icon:active {
+    outline: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    transform: rotate(720deg)
+  }
+
+  &__btn {
+    color: colors.$bodyFont;
+  }
+
+  &__btn:hover,
+  &__btn:focus,
+  &__btn:active {
+    color: colors.$lightPurple;
+  }
+}
