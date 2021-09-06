@@ -3,12 +3,8 @@ import ReactEmoji from 'react-emoji';
 
 import profilePic from '../../../img/profiles/building.png'
 
-const Message = ({ time, getProfilePic, message: { user, text, picIndex }, name }) => {
-  // let isSentByCurrentUser = false;
+const Message = ({ getProfilePic, message: { user, text, picIndex } }) => {
   let isSentByAdmin = false;
-
-  // const trimmedName = name.trim().toLowerCase();
-  // if (user === trimmedName) isSentByCurrentUser = true;
   if (user === 'admin') isSentByAdmin = true;
 
   return (
@@ -19,7 +15,6 @@ const Message = ({ time, getProfilePic, message: { user, text, picIndex }, name 
           <div className="message__detail">
             <div className="message__header">
               <div className="message__userName">{'✨ChatBot'}</div>
-              {/* <div className="message__timestamp">{time}</div> */}
             </div>
             <div className="message__text">{ReactEmoji.emojify(text)}</div>
           </div>
@@ -29,8 +24,7 @@ const Message = ({ time, getProfilePic, message: { user, text, picIndex }, name 
           <img src={getProfilePic(picIndex)} alt={`user #${picIndex}`} className="message__userImage" />
           <div className="message__detail">
             <div className="message__header">
-              <div className="message__userName">{name}</div>
-              {/* <div className="message__timestamp">{time}</div> */}
+              <div className="message__userName">{user}</div>
             </div>
             <div className="message__text">{ReactEmoji.emojify(text)}</div>
           </div>

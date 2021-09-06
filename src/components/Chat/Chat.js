@@ -90,7 +90,7 @@ const Chat = ({ location }) => {
           <InfoBar room={room} handleMenuToggle={handleMenuToggle} />
           <div className="containerContainer">
             <div className="desktopContainer">
-              <Messages currentUserProfilePic={userProfilePic} getProfilePic={getRandomProfilePic} messages={messages} name={name} />
+              <Messages currentUserProfilePic={userProfilePic} getProfilePic={getRandomProfilePic} messages={messages} />
             </div>
           </div>
         </main>
