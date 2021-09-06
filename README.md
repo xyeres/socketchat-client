@@ -5,7 +5,7 @@ Socketchat Client is a frontend chat app implemented with React and Socket.io-cl
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -28,10 +28,10 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 
 
-### Screenshot
+### Screenshots
 #### Mobile
 ![](./screen-feature.png)
-#### Desktop
+#### Desktop & Mobile
 ![](./screen-feature-desktop.png)
 ### Links
 
