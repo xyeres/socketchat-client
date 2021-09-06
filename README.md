@@ -29,7 +29,11 @@ Users should be able to:
 
 
 ### Screenshot
-
+#### Mobile
+![](./screenshot2.jpg)
+![](./screenshot3.jpg)
+![](./screenshot4.jpg)
+#### Desktop
 ![](./screenshot1.jpg)
 ![](./screenshot.jpg)
 
@@ -59,17 +63,16 @@ Here's an example:
 
 ```js
 useEffect(() => {
-    // Generate profile pic
+    // Generate profile pic & set it
     const { pic, picIndex } = getRandomProfilePic()
-    // Set profile
     setUserProfilePic(pic)
     // Parse room and user name from URL
     const { room, name } = queryString.parse(location.search);
-    // connect to backend 
-    socket = io(ENDPOINT);
-
     setName(name);
     setRoom(room);
+
+    // connect to backend 
+    socket = io(ENDPOINT);
 
     socket.emit('join', { name, room, picIndex }, (callbackMessage) => {
       // Alert user if their nickname is unavailable
@@ -89,10 +92,10 @@ useEffect(() => {
 *SOCKET.io*: The power of websockets! The fast, interactive, event-driven nature of Websockets feels intuitive to me and introduces so many exciting possibilities than traditional HTTP requests. I am looking foward to working with them more in future usecases such as video conferencing and game development apps.    
 
 ### Continued development
-There is a lot to this app that could expand, persistant data storage, user authentication, profiles, private messaging, there's a lot that could be added here. I may try adding voice chat at some point to learn more about modern browser media capabilities. 
+There is a lot to this app that could be expanded like adding persistant data storage, user authentication, profiles, private messaging, and more. I may try adding voice chat at some point to learn more about modern browser media capabilities. 
 ### Useful resources
 Here are a few helpful documents that I leaned on while building out this app
-- [Socket.io Development Docs](#)
+- [Socket.io Development Docs](https://socket.io/docs/v4)
 
 ## Author
 - Be sure to [follow me on Github!](https://www.github.com/xyeres)
