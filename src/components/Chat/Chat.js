@@ -7,7 +7,7 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import UserMenu from '../UserMenu/UserMenu';
 
-const DEBUG = 1
+const DEBUG = 0;
 let socket;
 
 const Chat = ({ location }) => {
