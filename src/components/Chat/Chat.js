@@ -7,7 +7,48 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import UserMenu from '../UserMenu/UserMenu';
 
-const DEBUG = 0;
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+
+
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyBVpnE5WC2Wt0JjXs_b7AVIHf5TWxQPeiY",
+  authDomain: "fir-intro-441aa.firebaseapp.com",
+  projectId: "fir-intro-441aa",
+  storageBucket: "fir-intro-441aa.appspot.com",
+  messagingSenderId: "558016156777",
+  appId: "1:558016156777:web:b936004d62970741843ef8",
+  measurementId: "G-MRY7JVDPN1"
+});
+
+const db = getFirestore();
+
+async function getMessagesFromDB() {
+  const querySnapshot = await getDocs(collection(db, "messages"));
+
+  let messages = querySnapshot.docs.map((msg) => {
+    return msg.data()
+  });
+
+  return messages;
+}
+
+async function saveMessageToDB(room, user, text, picIndex) {
+  try {
+    const docRef = await addDoc(collection(db, "messages"), {
+      room,
+      user,
+      text,
+      picIndex
+    });
+    console.log("Messsage written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error saving message: ", e);
+  }
+}
+
+const DEBUG = 1;
 let socket;
 
 const Chat = ({ location }) => {
@@ -18,6 +59,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState([]);
   const [menuIsActive, setMenuActive] = useState(false);
   const [userProfilePic, setUserProfilePic] = useState('');
+  const [userPicIndex, setUserPicIndex] = useState();
 
   // Setup Socket.io Endpoint
   let ENDPOINT = '';
@@ -29,6 +71,7 @@ const Chat = ({ location }) => {
   useEffect(() => {
     // Get random profile pic and set it
     const { pic, picIndex } = getRandomProfilePic()
+    setUserPicIndex(picIndex)
     setUserProfilePic(pic)
 
     // Set room and username
@@ -54,7 +97,9 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     socket.on('message', (message) => {
-      setMessages([...messages, message])
+      getMessagesFromDB()
+        .then(msgs => setMessages(msgs))
+      console.log('messages ', messages)
     })
   }, [messages])
 
@@ -68,6 +113,7 @@ const Chat = ({ location }) => {
     event.preventDefault();
     if (message) {
       socket.emit('sendMessage', message, () => setMessage(''))
+      saveMessageToDB(room, name, message, userPicIndex);
     }
   }
 
